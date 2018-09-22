@@ -16,7 +16,7 @@
 
 
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="Create()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -35,12 +35,12 @@
 
     <ion-item>
       <ion-label stacked>Title</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="Board.title"></ion-input>
     </ion-item>
   
     <ion-item>
       <ion-label stacked>Detail</ion-label>
-      <ion-textarea [(ngModel)]="msg"></ion-textarea>
+      <ion-textarea [(ngModel)]="Board.detail"></ion-textarea>
     </ion-item>
   
   </ion-list>

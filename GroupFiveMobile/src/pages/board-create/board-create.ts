@@ -10,12 +10,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BoardCreatePage {
 
-  Board: Board;
+  Board: Board = new Board();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
   }
 
   Create() {
+    console.log('svavs');
     this.http.post(GlobalVarible.host + "/api/Board/Create", JSON.stringify(this.Board), GlobalVarible.httpOptions)
       .subscribe(data => {
         this.navCtrl.pop();
