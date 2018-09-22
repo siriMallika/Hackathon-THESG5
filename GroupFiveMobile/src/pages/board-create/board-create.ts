@@ -16,7 +16,7 @@ export class BoardCreatePage {
   }
 
   Create() {
-    console.log('svavs');
+    this.Board.username = GlobalVarible.username;
     this.http.post(GlobalVarible.host + "/api/Board/Create", JSON.stringify(this.Board), GlobalVarible.httpOptions)
       .subscribe(data => {
         this.navCtrl.pop();

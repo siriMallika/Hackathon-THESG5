@@ -1,3 +1,4 @@
+import { GlobalVarible } from './../../app/models';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BoardListPage } from '../board-list/board-list';
@@ -14,6 +15,7 @@ export class HomePage {
   }
 
   logIn(){
+    GlobalVarible.username = this.username;
     this.navCtrl.push(BoardListPage);
   }
 

@@ -17,6 +17,7 @@ export class Post {
 
 export class GlobalVarible {
     static host: string = "https://localhost:5001";
+    static username: string;
 
     static httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })

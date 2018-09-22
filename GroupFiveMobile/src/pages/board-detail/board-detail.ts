@@ -17,6 +17,7 @@ export class BoardDetailPage {
   }
 
   Comment() {
+    this.Post.username = GlobalVarible.username;
     this.http.post(GlobalVarible.host + "/api/Board/Post/" + this.navParams.data.id, JSON.stringify(this.Post), GlobalVarible.httpOptions)
       .subscribe(data => {
         this.ionViewDidEnter();
