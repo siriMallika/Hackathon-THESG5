@@ -47,3 +47,31 @@ page-home {
         color: #000000;
     }
 }
+
+<ion-content class="background" padding>
+  <ion-card-header text-center>
+    Log In
+  </ion-card-header>
+  <ion-card-content class="card">
+    <ion-list no-line>
+      <ion-item class="item">
+        <ion-input class="text-input" type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+
+  <button ion-button full (click)="logIn()">Log In</button>
+
+
+</ion-content>
+ username: string;
+
+
+  constructor(public navCtrl: NavController) {
+  }
+
+  logIn() {
+    console.log("Username:  " + this.username);
+    
+    this.navCtrl.push(BoardListPage);
+  }
