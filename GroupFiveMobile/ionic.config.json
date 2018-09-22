@@ -1,0 +1,7 @@
+{
+  "name": "GroupFiveMobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
