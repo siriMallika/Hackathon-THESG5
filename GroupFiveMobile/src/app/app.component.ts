@@ -14,7 +14,7 @@ import { BoardListPage } from '../pages/board-list/board-list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = BoardListPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -24,7 +24,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
+      { title: 'List', component: BoardListPage },
       { title: 'Mini Game', component: CaptainPage }
     ];
 
