@@ -47,6 +47,14 @@ namespace TestLoadG5.Controllers
             Boards = Boards.Where(x => x.Id != id).ToList();
         }
 
+        [HttpPost("{id}")]
+        public void Post(string id, [FromBody]Post request)
+        {
+            var board = Boards.FirstOrDefault(x => x.Id == id);
+            request.Id = Guid.NewGuid().ToString();
+            board.Posts.Add(request);
+        }
+
         [HttpGet]
         public void UseMockProducts()
         {

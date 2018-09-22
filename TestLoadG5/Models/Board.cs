@@ -8,9 +8,10 @@ namespace TestLoadG5.Models
     public class Board
     {
         public string Id { get; set; }
+        public string Username { get; set; }
         public string Title { get; set; }
         public string Detail { get; set; }
-        public IEnumerable<Post> Posts { get; set; }
+        public List<Post> Posts { get; set; }
     }
 
     public class Post
