@@ -6,14 +6,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { CaptainPage } from '../pages/captain/captain';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-<<<<<<< HEAD
-=======
 import { BoardListPage } from '../pages/board-list/board-list';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
->>>>>>> c0f4bcdfff6ab608bb0849ddfcf683fee5ab5078
 import { BoardCreatePage } from '../pages/board-create/board-create';
 
 @NgModule({
@@ -21,35 +19,27 @@ import { BoardCreatePage } from '../pages/board-create/board-create';
     MyApp,
     HomePage,
     ListPage,
-<<<<<<< HEAD
-    BoardCreatePage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-=======
+    BoardCreatePage,
     BoardListPage,
     BoardCreatePage,
-    BoardDetailPage
+    BoardDetailPage,
+    CaptainPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
->>>>>>> c0f4bcdfff6ab608bb0849ddfcf683fee5ab5078
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     ListPage,
-<<<<<<< HEAD
-    BoardCreatePage
-=======
+    BoardCreatePage,
     BoardListPage,
     BoardCreatePage,
-    BoardDetailPage
->>>>>>> c0f4bcdfff6ab608bb0849ddfcf683fee5ab5078
+    BoardDetailPage,
+    CaptainPage
   ],
   providers: [
     StatusBar,
