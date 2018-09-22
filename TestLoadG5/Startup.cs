@@ -48,6 +48,12 @@ namespace TestLoadG5
                 app.UseHsts();
             }
 
+            app.UseCors(builder =>
+                builder.WithOrigins("*")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+            );
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

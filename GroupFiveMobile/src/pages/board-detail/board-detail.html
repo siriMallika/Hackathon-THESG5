@@ -14,5 +14,27 @@
 
 
 <ion-content padding>
-
+  <ion-card *ngIf="Board">
+    <ion-card-header>
+      {{Board.title}}
+    </ion-card-header>
+    <ion-card-content>
+      {{Board.detail}}
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-list *ngIf="Board && Board.posts">
+    <button ion-item *ngFor="let s of Board.posts" (click)="Detail(s.id)">
+      <img col-2 item-start src="https://s3.amazonaws.com/Snowcovered_C_Images/37145_Comment.png"
+      /> Title: {{s.title}}<br /> Detail: {{s.detail}}<br /> Username: {{s.username}}
+    </button>
+  </ion-list>
+  <ion-item>
+    <ion-label floating>Title</ion-label>
+    <ion-input type="text" [(ngModel)]="Post.title"></ion-input>
+  </ion-item>  <ion-item>
+    <ion-label floating>Detail</ion-label>
+    <ion-input type="text" [(ngModel)]="Post.detail"></ion-input>
+  </ion-item>
+  <button ion-button full (click)="Comment()">Comment</button>
 </ion-content>

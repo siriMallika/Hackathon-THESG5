@@ -52,6 +52,7 @@ namespace TestLoadG5.Controllers
         {
             var board = Boards.FirstOrDefault(x => x.Id == id);
             request.Id = Guid.NewGuid().ToString();
+            if (board.Posts == null) board.Posts = new List<Post>();
             board.Posts.Add(request);
         }
 
