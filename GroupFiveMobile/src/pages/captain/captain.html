@@ -1,0 +1,60 @@
+<!--
+  Generated template for the CaptainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>captain</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<h2>ทายตัวเลข 1 ถึง 4 (คำตอบมีเลขซ้ำได้)</h2>
+  <div class="row">
+  <div class="col">
+    <button dark ion-button block><span *ngIf="!isWin">?</span><span *ngIf="isWin">{{question[0]}}</span></button>
+  </div>
+  <div class="col">
+    <button dark ion-button block><span *ngIf="!isWin">?</span><span *ngIf="isWin">{{question[1]}}</span></button>
+  </div>
+  <div class="col">
+    <button dark ion-button block><span *ngIf="!isWin">?</span><span *ngIf="isWin">{{question[2]}}</span></button>
+  </div>
+  <div class="col">
+    <button dark ion-button block><span *ngIf="!isWin">?</span><span *ngIf="isWin">{{question[3]}}</span></button>
+  </div>
+</div>
+<h2>ทายตัวเลข (กดที่ปุ่มเพื่อเปลี่ยนตัวเลข)</h2>
+<div class="row">
+  <div class="col">
+    <button outline ion-button block (click)="changeAns(0)">{{answer[0]}}</button>
+  </div>
+  <div class="col">
+    <button outline ion-button block (click)="changeAns(1)">{{answer[1]}}</button>
+  </div>
+  <div class="col">
+    <button outline ion-button block (click)="changeAns(2)">{{answer[2]}}</button>
+  </div>
+  <div class="col">
+    <button outline ion-button block (click)="changeAns(3)">{{answer[3]}}</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <button outline ion-button block (click)="answerQuest()">ทาย</button>
+  </div>
+  <div class="col">
+    <button outline ion-button block (click)="newGame()">เกมใหม่</button>
+  </div>
+  <div class="col">
+    <button outline ion-button block (click)="clean()">ล้างข้อความ</button>
+  </div>
+</div>
+<ion-label *ngFor="let item of message.reverse()">{{item}}</ion-label>
+</ion-content>
