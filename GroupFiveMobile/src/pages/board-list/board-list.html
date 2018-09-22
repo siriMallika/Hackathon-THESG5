@@ -1,18 +1,19 @@
-<!--
-  Generated template for the BoardListPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
     <ion-title>board-list</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="Create()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-
+  <ion-list *ngIf="boards">
+    <button ion-item *ngFor="let s of boards" (click)="Detail(s.id)">
+      <img col-2 item-start src="https://www.jellycode.pt/wp-content/uploads/2013/09/Messages-icon.png"
+      /> Title: {{s.title}}<br /> Detail: {{s.detail}}<br /> Username: {{s.username}}
+    </button>
+  </ion-list>
 </ion-content>

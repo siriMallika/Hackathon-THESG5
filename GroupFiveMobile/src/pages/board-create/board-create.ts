@@ -1,12 +1,7 @@
+import { Board, GlobalVarible } from './../../app/models';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the BoardCreatePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BoardCreatePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Board: Board;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BoardCreatePage');
+  Create() {
+    this.http.post(GlobalVarible.host + "/api/Board/Create", JSON.stringify(this.Board), GlobalVarible.httpOptions)
+      .subscribe(data => {
+        this.navCtrl.pop();
+      });
   }
 
 }

@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the BoardDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Board, GlobalVarible } from '../../app/models';
+import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BoardDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Board: Board;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BoardDetailPage');
+  ionViewDidEnter() {
+    this.http.get<Board>(GlobalVarible.host + "/api/Student/Get/" + this.navParams.data.id)
+      .subscribe(data => {
+        this.Board = data;
+      });
   }
-
 }

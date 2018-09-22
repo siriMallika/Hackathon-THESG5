@@ -1,12 +1,9 @@
+import { BoardDetailPage } from './../board-detail/board-detail';
+import { BoardCreatePage } from './../board-create/board-create';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the BoardListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { GlobalVarible, Board } from '../../app/models';
+import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -15,11 +12,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BoardListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  boards: Board[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BoardListPage');
+  Create() {
+    this.navCtrl.push(BoardCreatePage);
   }
 
+  Detail(id: string) {
+    this.navCtrl.push(BoardDetailPage, { id: id });
+  }
+
+  ionViewDidEnter() {
+    this.http.get<Board[]>(GlobalVarible.host + "/api/Board/List")
+      .subscribe(data => {
+        this.boards = data;
+      });
+  }
 }

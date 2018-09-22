@@ -8,8 +8,8 @@ using TestLoadG5.Models;
 
 namespace TestLoadG5.Controllers
 {
+    [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     [Route("api/[controller]/[action]")]
-    [ApiController]
     public class BoardController : Controller
     {
         public static List<Board> Boards = new List<Board>();
